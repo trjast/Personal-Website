@@ -1,0 +1,91 @@
+<html>
+<style>
+	input { 
+		width: 225px;
+		height: 35px;
+		margin-bottom: 10px;
+		font-size: 20px;
+		text-align: right;
+	}
+	.buttons input {
+		width: 40px;
+		margin: 1px;
+		padding: 5px;
+		text-align: center; 
+	}
+</style>
+<script>
+function save(value)
+{
+	var d = new Date();
+	d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
+	var expires = "expires=" + d.toGMTString();
+	document.cookie = "calcVal=" + value + "; " + expires;
+}
+
+function retrieve(cname)
+{
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	for (var i = 0; i < ca.length; i++) 
+	{
+		var c = ca[i].trim();
+		if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+	}
+	return "";
+}
+
+function check(displayOnScreen)
+{
+	var expression = retrieve("calcVal");
+	if (expression != "" && displayOnScreen)
+		document.calculator.ans.value = expression;
+	else if(!displayOnScreen && expression == "")
+		expression = 0;
+	return expression;
+}
+
+function buttonClick(value, set)
+{
+	if(set)
+		document.calculator.ans.value = value;
+	else
+		document.calculator.ans.value += value;
+}
+
+</script>
+<body>
+	<h1>Lab 3 - Trevor Stevens and Ben Greenier</h1>
+	<form name="calculator">
+		<input type="textfield" name="ans" value="" placeholder="0">
+		<br>
+		<div class="buttons">
+			<input type="button" value="7" onClick="buttonClick('7', false)">
+			<input type="button" value="8" onClick="buttonClick('8', false)">
+			<input type="button" value="9" onClick="buttonClick('9', false)">
+			<input type="button" value="+" onClick="buttonClick('+', false)">
+			<input type="button" value="MC" onClick="save('')">
+			<br>
+			<input type="button" value="4" onClick="buttonClick('4', false)">
+			<input type="button" value="5" onClick="buttonClick('5', false)">
+			<input type="button" value="6" onClick="buttonClick('6', false)">
+			<input type="button" value="-" onClick="buttonClick('-', false)">
+			<input type="button" value="MR" onClick="check(true)">
+			<br>
+			<input type="button" value="1" onClick="buttonClick('1', false)">
+			<input type="button" value="2" onClick="buttonClick('2', false)">
+			<input type="button" value="3" onClick="buttonClick('3', false)">
+			<input type="button" value="*" onClick="buttonClick('*', false)">
+			<input type="button" value="MS" onClick="save(document.calculator.ans.value)">
+			<br>
+			<input type="button" value="0" onClick="buttonClick('0', false)">
+			<input type="reset" value="C" onClick="buttonClick('', true)">
+			<input type="button" value="=" onClick="buttonClick(eval(document.calculator.ans.value), true)">
+			<input type="button" value="/" onClick="buttonClick('/', false)">
+			<input type="button" value="M+" onClick="save(eval(check(false) + '+' + document.calculator.ans.value))">
+		</div>
+	</form>
+	<br><br><br><br><br>
+	<h3>Includes Extra Credit and Additional Extra Credit Problems</h3>
+</body>
+</html>
