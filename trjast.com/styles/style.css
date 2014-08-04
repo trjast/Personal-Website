@@ -1,0 +1,157 @@
+::selection { background: rgba(0, 0, 0, 0); }
+::-moz-selection { background: rgba(0, 0, 0, 0); }
+
+img {
+	vertical-align: middle;
+	max-width: 100%;
+	height: auto;
+}
+body {
+	background: #849bac;
+	color: #C7C7C7;
+	font-family: 'Source Sans Pro', sans-serif;
+	font: 16px;
+}
+a {
+	color: #C7C7C7;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+a:hover {
+	opacity: 0.5;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+h1 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 80px;
+	letter-spacing: -0.08em;
+	margin: 0;
+}
+h2 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1em;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	margin: 0px;
+}
+.content {
+	text-align: center;		
+	position: absolute;
+	overflow: hidden;
+	display: table-cell;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+.content ul, li {
+	display: block;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+}
+.content ul {
+	position: relative;
+	overflow: hidden;
+}
+.contact {
+	display: block;
+	width: 100%;
+	position: absolute;
+	z-index: 2;
+	text-align: center;
+	bottom: 5%;
+}
+.title {
+	margin-top: 100px;
+}
+.background-items {
+	margin-top: -30px;
+}
+.background {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.icons {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 18px;
+	text-align: center;
+	list-style: none;
+	list-style-type: none;
+}
+.icons li {
+	display: inline-block;
+	margin-right: 10px;
+	height: 25px;
+	width: 25px;
+	position: relative;
+	top: 0;
+}
+.icons li:last-of-type { margin-right: 0px; }
+.icons li a {
+	display: block;
+	width: 25px;
+	height: 25px;
+}
+a.mail {
+	text-decoration: none;
+	color: #C7C7C7;
+	padding-bottom: 8px;
+	font-size: 15px;
+}
+
+.icons .twitter {
+	background: url(../images/twitter.png) no-repeat center;
+	background-size: 25px 25px;
+}
+.icons .linkedin {
+	background: url(../images/linkedin.png) no-repeat center;
+	background-size: 25px 25px;
+}
+.icons .medium {
+	background: url(../images/medium.png) no-repeat center;
+	background-size: 25px 25px;
+}
+.icons .resume {
+	background: url(../images/resume.png) no-repeat center;
+	background-size: 25px 25px;
+}
+
+.icons .flickr {
+	background: url(../images/flickr.png) no-repeat center;
+	background-size: 25px 25px;
+}
+
+@media all and (min-width: 400px) {
+	h1 { font-size: 69px; line-height: 69px; }
+}
+@media all and (min-width: 700px) {
+	h1 { font-size: 130px; line-height: 130px; }
+}
+@media all and (min-width: 900px) {
+	h1 { font-size: 120px; line-height: 120px; }
+}
+@media all and (min-width: 1200px) {
+	h1 { font-size: 150px; line-height: 150px; }
+}
+@media all and (min-width: 1400px) {
+	h1 { font-size: 160px; line-height: 160px; }
+}
+@media all and (min-width: 1600px) {
+	h1 { font-size: 180px; line-height: 180px; }
+}
+@media all and (min-width: 1920px) {
+	h1 { font-size: 200px; line-height: 200px; }
+}
